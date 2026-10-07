@@ -59,7 +59,10 @@ function checkAns(p){
 }
 
 function theory(i){
-  cur=i;const m=$('#main');m.innerHTML=CH[i].h;if(CH[i].quiz.length)m.appendChild(quizHTML(i));
+  cur=i;const m=$('#main');m.innerHTML=CH[i].h;if(CH[i].ans)m.querySelectorAll('p').forEach(p=>{const s=p.querySelector('strong'),k=s&&s.textContent.match(/^([AB])(\d+)\.$/);if(!k)return;
+    const v=ANS[k[1]][k[2]-1];if(!v)return;const dt=document.createElement('details');
+    dt.innerHTML='<summary>উত্তর দেখো</summary><div class="note">'+(k[1]==='A'?esc(v):v)+'</div>';p.after(dt)});
+  if(CH[i].quiz.length)m.appendChild(quizHTML(i));
   const nx=document.createElement('p');
   nx.innerHTML=(i<CH.length-1?`<button class="btn pri" id="nx">পরের অধ্যায় →</button>`:`<button class="btn pri" id="nx">ব্যবহারিক শুরু করো →</button>`);
   m.appendChild(nx);$('#nx').onclick=()=>i<CH.length-1?go('theory',i+1):go('prac',0);
