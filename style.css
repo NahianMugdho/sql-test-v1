@@ -1,0 +1,33 @@
+:root{--bg:#f3f6f9;--card:#fff;--ink:#10233b;--mute:#5a6b80;--line:#d5dde7;--acc:#1d4ed8;--navy:#1e3a5f;--ok:#17803d;--bad:#b42318;--code:#1e1e2e;--codeink:#a6e3a1;--kw:#7dd3fc}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0c1522;--card:#142235;--ink:#e6eef8;--mute:#93a4b8;--line:#25384f;--acc:#60a5fa;--ok:#4ade80;--bad:#f87171}}
+:root[data-theme=dark]{--bg:#0c1522;--card:#142235;--ink:#e6eef8;--mute:#93a4b8;--line:#25384f;--acc:#60a5fa;--ok:#4ade80;--bad:#f87171}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.75 "Noto Sans Bengali","Nirmala UI",system-ui,sans-serif}
+header{display:flex;gap:14px;align-items:center;padding:12px 20px;background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5;flex-wrap:wrap}
+header h1{font-size:18px;margin:0;flex:1;min-width:180px}
+.tabs button,.btn{font:inherit;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:6px 14px;border-radius:6px;cursor:pointer}
+.tabs button.on,.btn.pri{background:var(--acc);color:#fff;border-color:var(--acc)}
+.btn:focus-visible,.tabs button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.wrap{display:grid;grid-template-columns:250px 1fr;max-width:1180px;margin:0 auto}
+nav{padding:18px 14px;border-right:1px solid var(--line);position:sticky;top:60px;align-self:start;max-height:calc(100vh - 60px);overflow:auto}
+nav a{display:block;padding:7px 10px;border-radius:6px;color:var(--ink);text-decoration:none;font-size:15px}
+nav a.on{background:var(--acc);color:#fff}
+main{padding:22px 26px 80px;min-width:0}
+h2{font-size:26px;margin:0 0 6px}h3{font-size:19px;margin:26px 0 6px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:14px 0}
+table{border-collapse:collapse;margin:10px 0;font-size:14.5px}th,td{border:1px solid var(--line);padding:5px 12px;text-align:left}th{background:var(--navy);color:#fff}.hero{background:var(--navy);color:#fff;text-align:center;padding:26px 16px}.hero h1{margin:0;font-size:30px}.hero p{margin:4px 0 14px;opacity:.85}.chips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}.chips span{border:1px solid #ffffff55;border-radius:6px;padding:3px 14px;font:600 14px "JetBrains Mono",monospace}.note,.warn,.tip{border-left:4px solid;border-radius:6px;padding:8px 14px;margin:12px 0}.note{background:#eff6ff;border-color:#1d4ed8;color:#1f2937}.warn{background:#fef2f2;border-color:#b42318;color:#1f2937}.tip{background:#f0fdf4;border-color:#17803d;color:#1f2937}h2{color:var(--navy);border-bottom:2px solid var(--navy);padding-bottom:4px}@media(prefers-color-scheme:dark){:root:not([data-theme=light]) h2{color:#93c5fd;border-color:#93c5fd}}
+.scroll{overflow-x:auto}
+pre{background:var(--code);color:var(--codeink);padding:12px 14px;border-radius:8px;overflow-x:auto;font:13.5px/1.6 "JetBrains Mono",monospace;margin:8px 0}
+code{font-family:"JetBrains Mono",monospace;font-size:.9em;background:color-mix(in srgb,var(--acc) 12%,transparent);padding:1px 5px;border-radius:4px}
+pre code{background:none;padding:0}
+.bn{border-left:4px solid var(--acc);padding:2px 0 2px 12px;color:var(--mute);margin:6px 0}
+.q{padding:12px 0;border-top:1px solid var(--line)}.q:first-of-type{border-top:0}
+.opt{display:block;width:100%;text-align:left;font:inherit;margin:4px 0;padding:6px 12px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:6px;cursor:pointer}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--card))}.opt.wrong{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 14%,var(--card))}
+input.fb,textarea{font:14px "JetBrains Mono",monospace;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:6px;padding:6px 10px}
+textarea{width:100%;min-height:78px}
+.res{margin-top:6px;font-weight:600}.res.ok{color:var(--ok)}.res.no{color:var(--bad)}
+.score{font-weight:700;color:var(--acc)}
+details summary{cursor:pointer;color:var(--acc);font-weight:600}
+@media(max-width:800px){.wrap{display:block}nav{position:static;max-height:none;border:0;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:4px}main{padding:16px}}
+@media(prefers-reduced-motion:no-preference){.opt{transition:background .15s}}
